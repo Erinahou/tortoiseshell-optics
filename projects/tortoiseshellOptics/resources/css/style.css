@@ -54,6 +54,10 @@ ul li {
   padding-right: 2rem;
 }
 
+.truncated-menu {
+  display: none;
+}
+
 /* Tagline */
 
 #tagline {
@@ -132,3 +136,171 @@ footer img {
   height: 1.5rem;
   padding-right: 1rem;
 }
+
+/* Media Queries */
+
+/* Tablet */
+
+@media only screen and (max-width: 1024px) {
+  .container {
+    width: 100%;
+  }
+
+  header {
+    height: 22rem;
+  }
+
+  .text {
+    margin-top: 5rem;
+    margin-right: 2rem;
+  }
+
+  h1 {
+    font-size: 1.33rem;
+    padding: 0.75rem 4rem;
+  }
+}
+
+/* Mobile */
+
+@media only screen and (max-width: 600px) {
+  .container {
+    width: 100%;
+  }
+
+  /* header */
+
+  header {
+    height: 17rem;
+    background-position: 20%; /* Check what this means */
+  }
+
+  nav span {
+    display: none;
+  }
+
+  #menu ul.truncated-menu{
+    display: block;
+  } /* This was based on the order of the CSS. Check why. */
+
+  #menu ul {
+    display: none;
+  }
+
+  #tagline {
+
+  }
+
+  .text {
+    margin: 9rem auto;
+    width: 100%;
+  }
+
+  h1 {
+    text-align: center;
+    padding: 1rem 0;
+  }
+
+  /* models */
+
+  #models {
+    flex-direction: column;
+    align-items: center;
+    margin: 3.77rem 0;
+  }
+
+  #truck {
+    margin: 0;
+  }
+
+  .model {
+    height: auto;
+    padding: 0;
+    margin-bottom: 1.54rem;
+  }
+
+  .model img {
+    padding-bottom: 1rem;
+  }
+
+  p {
+    font-size: 0.77rem;
+  }
+
+  /* business-info */
+
+  #business-info {
+    flex-direction: column;
+  }
+
+  .info {
+    width: 100%;
+    padding: 0;
+    margin-bottom: 4rem;
+  }
+
+  h2 {
+   width: 100%;
+   text-align: center;
+   padding: 0.5rem 0;
+  }
+
+  .info p {
+    width: 95%;
+    margin: auto;
+  }
+
+  /* Footer */
+
+  footer {
+    padding: 4rem 0;
+  }
+
+  footer span {
+    display: none;
+  }
+
+  footer img {
+    margin: auto;
+    padding: 0;
+  }
+
+}
+
+/*
+@media only screen and (min-width:) {
+  CSS ruleset
+}
+*/
+
+/*
+Supplying high quality media only to users with screen that can support high resolution media
+@media only screen and (min-resolution: 150dpi){
+  CSS for high resolution screens
+}
+*/
+
+/*
+Chaining multiple media features
+@media only screen and (max-width: 480px) and (min-resolution: 300dpi) {
+  CSS ruleset
+}
+*/
+
+/*
+If only one of the multiple media features in a media query must be met, you can seperate by comma
+@media only screen and (min-width: 480px), (orientation: landscape) {
+  CSS ruleset
+  Note: the media feature 'Orientation' detects if the page has more width that height.
+  If the page is WIDER, it's considered 'landscape' and if the page is taller, it's considered portrait.
+}
+
+/*
+Note: Rather than set breakpoints based on specific devices, the best practice is to resize your browser to view where the webiste naturally breaks based on its content. The dimensions at which the layout breaks or looks odd become your media query breakpoints. Within those breakpoints, we can adjust the CSS to make the page resize and reorganize.
+*/
+
+/* example:
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  CSS ruleset
+}
+*/
